@@ -1,0 +1,241 @@
+# ============================================================
+# Archivo de entrada de SIESTA para aGNRP-13 (Nanoribbons porosos)
+# El diseño del nanoribbon imita el que se usa en el paper de Moreno et al. 2018
+# ============================================================
+# ------------------------------------------------------------
+# 1. Identificación del sistema y metadatos
+# ------------------------------------------------------------
+SystemName          aGNRP-13        # Nombre descriptivo del sistema
+SystemLabel         aGNRP-13        # Etiqueta para archivos de salida
+# ------------------------------------------------------------
+# 2. Definición de especies atómicas y pseudopotenciales
+# ------------------------------------------------------------
+NumberOfAtoms       104
+NumberOfSpecies     2
+# Bloque para definir especies químicas (Z=6, label=C)
+%block ChemicalSpeciesLabel
+ 1 6 C.gga
+ 2 1 H.gga
+%endblock ChemicalSpeciesLabel
+# ------------------------------------------------------------
+# 3. Base de orbitales atómicos (PAO)
+# ------------------------------------------------------------
+PAO.BasisSize     DZP       # Base doble-zeta con polarización (precisión media-alta)
+PAO.EnergyShift   0.1 eV   # Energía de confinamiento: define el rango radial (0.02 Ry ≈ 0.27 eV)
+#PAO.BasisType     split     # Método para generar zetas adicionales: división de norma (split-valence)
+#PAO.SplitNorm     0.15      # Fracción de la norma para los zetas extra (más compactos)
+#PAO.SoftDefault       T        # Activa confinamiento suave para todos los orbitales
+#PAO.SoftInnerRadius   0.9      # Comienza a 90% del radio de corte
+#PAO.SoftPotential     40 Ry    # Potencial máximo (fuerte confinamiento)
+# %block PAO.Basis
+# C.gga                 2          # Species label, número de shells l para C
+#  n=2   0   2                     # n=2, l=0 (s), Nzeta=2
+#    4.088    2.500                # Radios de corte para s (primera y segunda zeta)
+#    1.000    1.000                # Pesos relativos para s
+#  n=2   1   2 P   1               # n=2, l=1 (p), Nzeta=2, con polarización incluida
+#    4.870    3.000                # Radios de corte para p (primera y segunda zeta)
+#    1.000    1.000                # Pesos relativos para p
+#H.gga                 1
+# n=1   0   2 P   1               # Para H, se incluye la polarización perturbativa
+#   4.687      3.286
+#   1.000      1.000
+#%endblock PAO.Basis
+# ------------------------------------------------------------
+# 4. Parámetros de la celda cristalina
+# ------------------------------------------------------------
+# Constante de red explícita
+LatticeConstant      1.0 Ang  # Distancia C-C en grafeno (optimizado sin relajación)
+# Vectores de red en Angstrom (celda hexagonal)
+# - a1 y a2: Vectores en el plano del grafeno
+# - a3: Dirección perpendicular (distancia entre láminas)
+%block LatticeVectors
+ 17.28000000 0.00000000 0.00000000
+ 0.000000000 40.0000000 0.00000000
+ 0.000000000 0.00000000 20.00000000
+%endblock LatticeVectors
+# Coordenadas atómicas en coordenadas Angstrom
+AtomicCoordinatesFormat Ang
+%block AtomicCoordinatesAndAtomicSpecies
+  0.00348281 14.98830633 10.00000000 1 #   1: C
+  0.00348281 17.48245949 10.00000000 1 #   2: C
+  0.00348281 19.97661265 10.00000000 1 #   3: C
+  0.72000000 13.74122974 10.00000000 1 #   4: C
+  0.72000000 16.23538291 10.00000000 1 #   5: C
+  0.72000000 18.72953607 10.00000000 1 #   6: C
+  0.72000000 21.22368923 10.00000000 1 #   7: C
+  2.16000000 11.24707658 10.00000000 1 #   8: C
+  2.16000000 13.74122974 10.00000000 1 #   9: C
+  2.16000000 16.23538291 10.00000000 1 #  10: C
+  2.16000000 18.72953607 10.00000000 1 #  11: C
+  2.16000000 21.22368923 10.00000000 1 #  12: C
+  2.16000000 23.71784240 10.00000000 1 #  13: C
+  2.88000000 10.00000000 10.00000000 1 #  14: C
+  2.88000000 12.49415316 10.00000000 1 #  15: C
+  2.88000000 14.98830633 10.00000000 1 #  16: C
+  2.88000000 17.48245949 10.00000000 1 #  17: C
+  2.88000000 19.97661265 10.00000000 1 #  18: C
+  2.88000000 22.47076581 10.00000000 1 #  19: C
+  2.88000000 24.96491898 10.00000000 1 #  20: C
+  4.32000000 10.00000000 10.00000000 1 #  21: C
+  4.32000000 12.49415316 10.00000000 1 #  22: C
+  4.32000000 14.98830633 10.00000000 1 #  23: C
+  4.32000000 17.48245949 10.00000000 1 #  24: C
+  4.32000000 19.97661265 10.00000000 1 #  25: C
+  4.32000000 22.47076581 10.00000000 1 #  26: C
+  4.32000000 24.96491898 10.00000000 1 #  27: C
+  5.04000000 11.24707658 10.00000000 1 #  28: C
+  5.04000000 13.74122974 10.00000000 1 #  29: C
+  5.04000000 16.23538291 10.00000000 1 #  30: C
+  5.04000000 18.72953607 10.00000000 1 #  31: C
+  5.04000000 21.22368923 10.00000000 1 #  32: C
+  5.04000000 23.71784240 10.00000000 1 #  33: C
+  6.48000000 13.74122974 10.00000000 1 #  34: C
+  6.48000000 16.23538291 10.00000000 1 #  35: C
+  6.48000000 18.72953607 10.00000000 1 #  36: C
+  6.48000000 21.22368923 10.00000000 1 #  37: C
+  7.20000000 14.98830633 10.00000000 1 #  38: C
+  7.20000000 17.48245949 10.00000000 1 #  39: C
+  7.20000000 19.97661265 10.00000000 1 #  40: C
+  8.64000000 14.98830633 10.00000000 1 #  41: C
+  8.64000000 17.48245949 10.00000000 1 #  42: C
+  8.64000000 19.97661265 10.00000000 1 #  43: C
+  9.36000000 13.74122974 10.00000000 1 #  44: C
+  9.36000000 16.23538291 10.00000000 1 #  45: C
+  9.36000000 18.72953607 10.00000000 1 #  46: C
+  9.36000000 21.22368923 10.00000000 1 #  47: C
+ 10.80000000 11.24707658 10.00000000 1 #  48: C
+ 10.80000000 13.74122974 10.00000000 1 #  49: C
+ 10.80000000 16.23538291 10.00000000 1 #  50: C
+ 10.80000000 18.72953607 10.00000000 1 #  51: C
+ 10.80000000 21.22368923 10.00000000 1 #  52: C
+ 10.80000000 23.71784240 10.00000000 1 #  53: C
+ 11.52000000 10.00000000 10.00000000 1 #  54: C
+ 11.52000000 12.49415316 10.00000000 1 #  55: C
+ 11.52000000 14.98830633 10.00000000 1 #  56: C
+ 11.52000000 17.48245949 10.00000000 1 #  57: C
+ 11.52000000 19.97661265 10.00000000 1 #  58: C
+ 11.52000000 22.47076581 10.00000000 1 #  59: C
+ 11.52000000 24.96491898 10.00000000 1 #  60: C
+ 12.96000000 10.00000000 10.00000000 1 #  61: C
+ 12.96000000 12.49415316 10.00000000 1 #  62: C
+ 12.96000000 14.98830633 10.00000000 1 #  63: C
+ 12.96000000 17.48245949 10.00000000 1 #  64: C
+ 12.96000000 19.97661265 10.00000000 1 #  65: C
+ 12.96000000 22.47076581 10.00000000 1 #  66: C
+ 12.96000000 24.96491898 10.00000000 1 #  67: C
+ 13.68000000 11.24707658 10.00000000 1 #  68: C
+ 13.68000000 13.74122974 10.00000000 1 #  69: C
+ 13.68000000 16.23538291 10.00000000 1 #  70: C
+ 13.68000000 18.72953607 10.00000000 1 #  71: C
+ 13.68000000 21.22368923 10.00000000 1 #  72: C
+ 13.68000000 23.71784240 10.00000000 1 #  73: C
+ 15.12000000 13.74122974 10.00000000 1 #  74: C
+ 15.12000000 16.23538291 10.00000000 1 #  75: C
+ 15.12000000 18.72953607 10.00000000 1 #  76: C
+ 15.12000000 21.22368923 10.00000000 1 #  77: C
+ 15.84000000 14.98830633 10.00000000 1 #  78: C
+ 15.84000000 17.48245949 10.00000000 1 #  79: C
+ 15.84000000 19.97661265 10.00000000 1 #  80: C
+  0.17000000 12.78860180 10.00000000 2 #  81: H
+  0.17000000 22.17631718 10.00000000 2 #  82: H
+  1.06000000 11.24707658 10.00000000 2 #  83: H
+  1.06000000 23.71784240 10.00000000 2 #  84: H
+  2.33000000  9.04737206 10.00000000 2 #  85: H
+  2.33000000 25.91754692 10.00000000 2 #  86: H
+  4.87000000  9.04737206 10.00000000 2 #  87: H
+  4.87000000 25.91754692 10.00000000 2 #  88: H
+  6.14000000 11.24707658 10.00000000 2 #  89: H
+  6.14000000 23.71784240 10.00000000 2 #  90: H
+  7.03000000 12.78860180 10.00000000 2 #  91: H
+  7.03000000 22.17631718 10.00000000 2 #  92: H
+  8.81000000 12.78860180 10.00000000 2 #  93: H
+  8.81000000 22.17631718 10.00000000 2 #  94: H
+  9.70000000 11.24707658 10.00000000 2 #  95: H
+  9.70000000 23.71784240 10.00000000 2 #  96: H
+ 10.97000000  9.04737206 10.00000000 2 #  97: H
+ 10.97000000 25.91754692 10.00000000 2 #  98: H
+ 13.51000000  9.04737206 10.00000000 2 #  99: H
+ 13.51000000 25.91754692 10.00000000 2 # 100: H
+ 14.78000000 11.24707658 10.00000000 2 # 101: H
+ 14.78000000 23.71784240 10.00000000 2 # 102: H
+ 15.67000000 12.78860180 10.00000000 2 # 103: H
+ 15.67000000 22.17631718 10.00000000 2 # 104: H
+%endblock AtomicCoordinatesAndAtomicSpecies
+# ------------------------------------------------------------
+#  Relajación del sistema
+# ------------------------------------------------------------
+MD.TypeOfRun            CG             # Conjugate-Gradient minimization
+MD.NumCGsteps           100
+MD.MaxForceTol          0.02 eV/Ang    # Cuanto más grande el cutoff saldrá mejor la relajación
+                                        # Si no converge puede ser por esto y el ruido numérico
+#MD.MaxStressTol         0.01 eV/Ang**3 # (Opcional si usas celdas periódicas)
+#MD.VariableCell         .true.         # ('true' si también quieres optimizar la celda)
+# ------------------------------------------------------------
+#  Plot charge densities (DENCHAR)
+# ------------------------------------------------------------
+WriteDenchar          .true.      # Escribir información desde DENCHAR
+WriteWaveFunctions    .true.      # If true escribe en .out una lista de funciones de onda
+                                  # The wavefunctions are written to a file named SystemLabel.WFSX
+# This block defines the k-points at which the wavefunctions are stored.
+block WaveFuncKPoints
+  0.000 0.000 0.000 from 1 to 10  # Definimos el punto Gamma, se guardan las 10 primeras funciones de onda
+endblock WaveFuncKPoints
+# ------------------------------------------------------------
+# 5. Parámetros DFT y malla de integración
+# ------------------------------------------------------------
+# Nota: Asegurarse de tener el pseudopotencial 'C.gga.psf' y 'H.gga.psf' en el directorio
+XC.functional       GGA         # Usamos el funcional de gradiente generalizado (GGA)
+XC.authors          PBE         # Usamos la parametrización PBE para el funcional GGA
+MeshCutoff          200.0 Ry    # Corte de malla para la integración del potencial electrostático.
+#MeshSplit           2 4 4       # Malla anisotrópica (menor resolución en y,z)
+# ------------------------------------------------------------
+# 6. Control de la convergencia SCF
+# ------------------------------------------------------------
+MaxSCFIterations    200         # Iteraciones para convergencia
+DM.MixingWeight     0.1         # Peso para acelerar convergencia
+DM.NumberPulay      5           # Historial
+DM.Tolerance        1.d-4       # Tolerancia del resultado
+DM.AllowExtrapolation .true.    # Permitir extrapolación para estabilidad
+SolutionMethod      diagon      # Diagonalización directa (precisión > velocidad)
+DM.UseSaveDM        .true.      # Reutiliza la DM de archivos anteriores (si existen), usar solo cuando se hacen pequeños cambios
+#ElectronicTemperature 300 K  # Temperatura electrónica
+# ------------------------------------------------------------
+# 7. Malla k para integración en zona de Brillouin
+# ------------------------------------------------------------
+# Malla Monkhorst-Pack para alta precisión en energía
+%block kgrid_Monkhorst_Pack
+  40   0   0   0.0   # 40 puntos en dirección x (sin desplazamiento del origen)
+   0   1   0   0.0   # no periódico en y
+   0   0   1   0.0   # no periódico en z
+%endblock Kgrid_Monkhorst_Pack
+# ------------------------------------------------------------
+# 8. Cálculo de bandas electrónicas
+# ------------------------------------------------------------
+# Ruta de alta simetría  X-Γ-X con 100 puntos por segmento
+BandLinesScale      ReciprocalLatticeVectors
+# --- Cálculo de las fatbans ---
+WFS.Write.For.Bands   .true.
+WFS.OutputFormat      Legacy
+WFS.band.min  100
+WFS.band.max  800
+COOP.Write   .true.
+%block BandLines
+1    0.5      0.5      0.0   X        # Punto X (0.5,0.5,0) (sin desplazamiento)
+100  0.0      0.0      0.0   \Gamma   # 100 puntos: X → Γ
+100  0.5      0.5      0.0   X        # 100 puntos: Γ → X
+%endblock BandLine
+SaveRho .true.  # Guarda la matriz densidad
+SaveHS .true.   # Guarda el hamiltoniano
+TS.HS.Save
+# ------------------------------------------------------------
+# 9. Densidad de Estados Proyectados (PDOS)
+# ------------------------------------------------------------
+%block ProjectedDensityOfStates
+  -70.00  10.00  0.050  5000  eV    # Rango amplio con alta resolución
+%endblock ProjectedDensityOfStates
+# Malla k fina para PDOS (60x60x1)
+%block PDOS.kgrid_Monkhorst_Pack
+  60  0  0  0.0
+   0  1  0  0.0
+   0  0  1  0.0
+%endblock PDOS.kgrid_Monkhorst_Pack

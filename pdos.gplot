@@ -1,0 +1,23 @@
+set terminal pngcairo enhanced size 1000,600 font "Arial,12"
+set output "pdos.png"
+
+E_F = -3.653667 # Cambia este valor por el real obtenido en la simulación
+
+set xlabel "Energía (eV)"
+set ylabel "Densidad de estados (PDOS)"
+set title "PDOS para aGNR-7 (mprop)"
+set grid
+
+# Dibujar línea vertical en E=0 para indicar el nivel de Fermi
+set arrow from 0, graph 0 to 0, graph 1 nohead lw 1 lt 2 lc rgb "red" dt 3
+
+# Ajustar el rango de energía y densidad de estados
+set xrange [-10:10]
+set yrange [0:*]
+
+# Graficar PDOS de cada orbital
+plot "aGNR-7prop.C.gga_s.pdos" using ($1 - E_F):2 with lines title "s" lc rgb "blue", \
+     "aGNR-7prop.C.gga_px.pdos" using ($1 - E_F):2 with lines title "px" lc rgb "yellow", \
+     "aGNR-7prop.C.gga_py.pdos" using ($1 - E_F):2 with lines title "py" lc rgb "orange", \
+     "aGNR-7prop.C.gga_pz.pdos" using ($1 - E_F):2 with lines title "pz" lc rgb "purple", \
+     "aGNR-7prop.H.gga_s.pdos" using ($1 - E_F):2 with lines title "s (H)" lc rgb "red", \

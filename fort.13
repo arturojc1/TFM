@@ -1,0 +1,44 @@
+%YAML 1.2
+---
+
+siesta:
+  version: "4.1.5"
+  arch: "unknown"
+  compiler: "ifort (IFORT) 2021.6.0 20220226"
+  fflags: "mpiifort -fPIC -O2 -xHost -fp-model precise -fallow-argument-mismatch"
+  fppflags: "-DFC_HAVE_ABORT -DF2003 -DMPI -DCDF -DNCDF -DNCDF_4 -DNCDF_PARALLEL -I/scratcch/scicomp/easybuild/CentOS/7.3.1611/Haswell/software/netCDF-Fortran/4.6.0-iimpi-2022a/include -DSIESTA__ELPA -I/scratch/scicomp/easybuild/CentOS/7.3.1611/Haswell/software/ELPA/2021.11.001-intel-2022a/include/elpa-2021.11.001/modules -DSIESTA__METIS"
+  libs: "libncdf.a libfdict.a -Wl,-Bstatic -Wl,--start-group -lmkl_scalapack_lp64 -lmkkl_blacs_intelmpi_lp64 -lmkl_intel_lp64 -lmkl_sequential -lmkl_core -Wl,--end-group -Wl,-Bdynamic -lnetcdff -L/scratch/scicomp/easybuild/CentOS/7.3.1611/Haswell/software/ELPA/2021.11.001-intel-2022a/lib -lelpa -L/scratch/scicomp/easybuild/CentOS/7.3.1611/Haswell/software/METIS/5.1.0-GCCcore-11.3.0/lib -lmetis"
+  build: "mpi"
+  openmp: "no"
+  gemm3m: "no"
+  netcdf: "yes"
+  netcdf4: "yes"
+  netcdf4_mpi: "yes"
+  metis: "yes"
+  chess: "no"
+  elpa: "yes"
+  flook: "no"
+  pexsi: "no"
+
+energies:
+  Ebs:          -0.31809623E+03
+  Eions:           0.18251475E+04
+  Ena:           0.56736455E+03
+  Ekin:           0.66965023E+03
+  Enl:          -0.29761994E+02
+  Eso:           0.00000000E+00
+  Edftu:           0.00000000E+00
+  DEna:          -0.28569955E+02
+  DUscf:           0.24263540E+01
+  DUext:           0.00000000E+00
+  Exc:          -0.29418305E+03
+  Ecorrec:           0.00000000E+00
+  Emadel:           0.00000000E+00
+  Emeta:           0.00000000E+00
+  Emolmec:           0.00000000E+00
+  Ekinion:           0.00000000E+00
+  Eharris:          -0.93822139E+03
+  Etot:          -0.93822139E+03
+  FreeEng:          -0.93822139E+03
+
+...

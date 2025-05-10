@@ -1,0 +1,231 @@
+SystemName     aGNRP-13                                                                        
+SystemLabel     aGNRP-13                                                                        
+MPI.Nprocs.SIESTA        24     # default value
+SpinPolarized              F     # default value
+NonCollinearSpin              F     # default value
+SpinOrbit              F     # default value
+#:block? SpinPolarized              F
+#:defined? SpinPolarized              F
+#:block? NonCollinearSpin              F
+#:defined? NonCollinearSpin              F
+#:block? SpinOrbit              F
+#:defined? SpinOrbit              F
+Spin     none                                 # default value
+TimeReversalSymmetry              T     # default value
+DebugObjects.Node         0     # default value
+DebugObjects              F     # default value
+XML.Write              F     # default value
+timer_report_threshold          0.000000000         # default value
+UseParallelTimer              T     # default value
+UseTreeTimer              F     # default value
+alloc_report_level         0     # default value
+alloc_report_threshold          0.000000000         # default value
+xc.functional     GGA                                                                             
+xc.authors     PBE                                                                             
+MM.Cutoff          30.00000000     Bohr     # default value
+MM.UnitsEnergy     eV     # default value
+MM.UnitsDistance     Ang     # default value
+WriteIonPlotFiles              F     # default value
+Atom.Debug.KB.Generation              F     # default value
+KB.New.Reference.Orbitals              F     # default value
+user-basis              F     # default value
+user-basis-netcdf              F     # default value
+#:block? DFTU.proj              F
+#:defined? DFTU.proj              F
+#:block? LDAU.proj              F
+#:defined? LDAU.proj              F
+Number_of_species              2
+%block Chemical_species_label
+  1 6 C.gga
+  2 1 H.gga
+%endblock Chemical_species_label
+ReparametrizePseudos              F     # default value
+Restricted.Radial.Grid              T     # default value
+Rmax.Radial.Grid          0.000000000         # default value
+PAO.BasisSize     DZP                                                                             
+PAO.BasisType     split          # default value
+PAO.SoftDefault              F     # default value
+PAO.SoftInnerRadius         0.9000000000         # default value
+PAO.SoftPotential          40.00000000         # default value
+PAO.SplitNorm         0.1500000000         # default value
+PAO.SplitNormH         -1.000000000         # default value
+LDAU.ProjectorGenerationMethod         2     # default value
+DFTU.ProjectorGenerationMethod         2     # default value
+LDAU.EnergyShift         0.5000000000E-01 Ry     # default value
+DFTU.EnergyShift         0.5000000000E-01 Ry     # default value
+LDAU.CutoffNorm         0.9000000000         # default value
+DFTU.CutoffNorm         0.9000000000         # default value
+PAO.SoftDefault              F     # default value
+PAO.SoftInnerRadius         0.9000000000         # default value
+PAO.SoftPotential          40.00000000         # default value
+LDAU.ThresholdTol         0.1000000000E-01     # default value
+DFTU.ThresholdTol         0.1000000000E-01     # default value
+LDAU.PopTol         0.1000000000E-02     # default value
+DFTU.PopTol         0.1000000000E-02     # default value
+LDAU.PotentialShift              F     # default value
+DFTU.PotentialShift              F     # default value
+LDAU.FirstIteration              F     # default value
+DFTU.FirstIteration              F     # default value
+FilterCutoff          0.000000000     Ry     # default value
+FilterTol          0.000000000     Ry     # default value
+KB.Rmax          6.000000000     Bohr     # default value
+PAO.EnergyShift         0.7349798845E-02         Ry
+# above item originally: PAO.EnergyShift         0.1000000000     eV        
+PAO.SplitTailNorm              F     # default value
+PAO.FixSplitTable              F     # default value
+PAO.NewSplitCode              F     # default value
+PAO.Filter              F     # default value
+PAO.Keep.Findp.Bug              F     # default value
+PAO.Filter              F     # default value
+PAO.Filter              F     # default value
+PAO.Filter              F     # default value
+PAO.OldStylePolorbs              T     # default value
+PAO.SplitTailNorm              F     # default value
+PAO.FixSplitTable              F     # default value
+PAO.NewSplitCode              F     # default value
+PAO.Filter              F     # default value
+Vna.Filter              F     # default value
+FilterCutoff          0.000000000     Ry     # default value
+FilterTol          0.000000000     Ry     # default value
+KB.Rmax          6.000000000     Bohr     # default value
+PAO.EnergyShift         0.7349798845E-02         Ry
+# above item originally: PAO.EnergyShift         0.1000000000     eV        
+PAO.SplitTailNorm              F     # default value
+PAO.FixSplitTable              F     # default value
+PAO.NewSplitCode              F     # default value
+PAO.Filter              F     # default value
+PAO.Filter              F     # default value
+PAO.OldStylePolorbs              T     # default value
+PAO.SplitTailNorm              F     # default value
+PAO.FixSplitTable              F     # default value
+PAO.NewSplitCode              F     # default value
+PAO.Filter              F     # default value
+Vna.Filter              F     # default value
+PAO.BasisType     split          # default value
+Atom-Setup-Only              F     # default value
+UseStructFile              F     # default value
+MD.UseStructFile              F     # default value
+LatticeConstant          1.889726878           Bohr
+# above item originally: LatticeConstant          1.000000000     Ang       
+#:block? LatticeParameters              F
+#:block? LatticeVectors              T
+%block LatticeVectors
+  17.28000000 0.00000000 0.00000000
+  0.000000000 40.0000000 0.00000000
+  0.000000000 0.00000000 20.00000000
+%endblock LatticeVectors
+AtomicCoordinatesFormat     Ang                                                                             
+NumberOfAtoms            132
+ZM.UnitsLength     Bohr           # default value
+ZM.UnitsAngle     rad            # default value
+ZM.ForceTolLength         0.1555740000E-02 Ry/Bohr     # default value
+ZM.ForceTolAngle         0.3565490000E-02 Ry/rad     # default value
+ZM.MaxDisplLength         0.2000000000     Bohr     # default value
+ZM.MaxDisplAngle         0.3000000000E-02 rad     # default value
+ZM.CalcAllForces              F     # default value
+%block AtomicCoordinatesAndAtomicSpecies
+   0.00000000 14.98830633 10.00000000 1 #   1: C
+   0.00000000 17.48245949 10.00000000 1 #   2: C
+   0.00000000 19.97661265 10.00000000 1 #   3: C
+   0.72000000 13.74122974 10.00000000 1 #   4: C
+   0.72000000 16.23538291 10.00000000 1 #   5: C
+   0.72000000 18.72953607 10.00000000 1 #   6: C
+   0.72000000 21.22368923 10.00000000 1 #   7: C
+   2.16000000 11.24707658 10.00000000 1 #   8: C
+   2.16000000 13.74122974 10.00000000 1 #   9: C
+   2.16000000 16.23538291 10.00000000 1 #  10: C
+   2.16000000 18.72953607 10.00000000 1 #  11: C
+   2.16000000 21.22368923 10.00000000 1 #  12: C
+   2.16000000 23.71784240 10.00000000 1 #  13: C
+   2.88000000 10.00000000 10.00000000 1 #  14: C
+   2.88000000 12.49415316 10.00000000 1 #  15: C
+   2.88000000 14.98830633 10.00000000 1 #  16: C
+   2.88000000 17.48245949 10.00000000 1 #  17: C
+   2.88000000 19.97661265 10.00000000 1 #  18: C
+   2.88000000 22.47076581 10.00000000 1 #  19: C
+   2.88000000 24.96491898 10.00000000 1 #  20: C
+   4.32000000 10.00000000 10.00000000 1 #  21: C
+   4.32000000 12.49415316 10.00000000 1 #  22: C
+   4.32000000 14.98830633 10.00000000 1 #  23: C
+   4.32000000 17.48245949 10.00000000 1 #  24: C
+   4.32000000 19.97661265 10.00000000 1 #  25: C
+   4.32000000 22.47076581 10.00000000 1 #  26: C
+   4.32000000 24.96491898 10.00000000 1 #  27: C
+   5.04000000 11.24707658 10.00000000 1 #  28: C
+   5.04000000 13.74122974 10.00000000 1 #  29: C
+   5.04000000 16.23538291 10.00000000 1 #  30: C
+   5.04000000 18.72953607 10.00000000 1 #  31: C
+   5.04000000 21.22368923 10.00000000 1 #  32: C
+   5.04000000 23.71784240 10.00000000 1 #  33: C
+   6.48000000 13.74122974 10.00000000 1 #  34: C
+   6.48000000 16.23538291 10.00000000 1 #  35: C
+   6.48000000 18.72953607 10.00000000 1 #  36: C
+   6.48000000 21.22368923 10.00000000 1 #  37: C
+   7.20000000 14.98830633 10.00000000 1 #  38: C
+   7.20000000 17.48245949 10.00000000 1 #  39: C
+   7.20000000 19.97661265 10.00000000 1 #  40: C
+   8.64000000 14.98830633 10.00000000 1 #  41: C
+   8.64000000 17.48245949 10.00000000 1 #  42: C
+   8.64000000 19.97661265 10.00000000 1 #  43: C
+   9.36000000 13.74122974 10.00000000 1 #  44: C
+   9.36000000 16.23538291 10.00000000 1 #  45: C
+   9.36000000 18.72953607 10.00000000 1 #  46: C
+   9.36000000 21.22368923 10.00000000 1 #  47: C
+  10.80000000 11.24707658 10.00000000 1 #  48: C
+  10.80000000 13.74122974 10.00000000 1 #  49: C
+  10.80000000 16.23538291 10.00000000 1 #  50: C
+  10.80000000 18.72953607 10.00000000 1 #  51: C
+  10.80000000 21.22368923 10.00000000 1 #  52: C
+  10.80000000 23.71784240 10.00000000 1 #  53: C
+  11.52000000 10.00000000 10.00000000 1 #  54: C
+  11.52000000 12.49415316 10.00000000 1 #  55: C
+  11.52000000 14.98830633 10.00000000 1 #  56: C
+  11.52000000 17.48245949 10.00000000 1 #  57: C
+  11.52000000 19.97661265 10.00000000 1 #  58: C
+  11.52000000 22.47076581 10.00000000 1 #  59: C
+  11.52000000 24.96491898 10.00000000 1 #  60: C
+  12.96000000 10.00000000 10.00000000 1 #  61: C
+  12.96000000 12.49415316 10.00000000 1 #  62: C
+  12.96000000 14.98830633 10.00000000 1 #  63: C
+  12.96000000 17.48245949 10.00000000 1 #  64: C
+  12.96000000 19.97661265 10.00000000 1 #  65: C
+  12.96000000 22.47076581 10.00000000 1 #  66: C
+  12.96000000 24.96491898 10.00000000 1 #  67: C
+  13.68000000 11.24707658 10.00000000 1 #  68: C
+  13.68000000 13.74122974 10.00000000 1 #  69: C
+  13.68000000 16.23538291 10.00000000 1 #  70: C
+  13.68000000 18.72953607 10.00000000 1 #  71: C
+  13.68000000 21.22368923 10.00000000 1 #  72: C
+  13.68000000 23.71784240 10.00000000 1 #  73: C
+  15.12000000 13.74122974 10.00000000 1 #  74: C
+  15.12000000 16.23538291 10.00000000 1 #  75: C
+  15.12000000 18.72953607 10.00000000 1 #  76: C
+  15.12000000 21.22368923 10.00000000 1 #  77: C
+  15.84000000 14.98830633 10.00000000 1 #  78: C
+  15.84000000 17.48245949 10.00000000 1 #  79: C
+  15.84000000 19.97661265 10.00000000 1 #  80: C
+   0.17000000 12.78860180 10.00000000 2 #  81: H
+   0.17000000 22.17631718 10.00000000 2 #  82: H
+   1.06000000 11.24707658 10.00000000 2 #  83: H
+   1.06000000 23.71784240 10.00000000 2 #  84: H
+   2.33000000  9.04737206 10.00000000 2 #  85: H
+   2.33000000 25.91754692 10.00000000 2 #  86: H
+   4.87000000  9.04737206 10.00000000 2 #  87: H
+   4.87000000 25.91754692 10.00000000 2 #  88: H
+   6.14000000 11.24707658 10.00000000 2 #  89: H
+   6.14000000 23.71784240 10.00000000 2 #  90: H
+   7.03000000 12.78860180 10.00000000 2 #  91: H
+   7.03000000 22.17631718 10.00000000 2 #  92: H
+   8.81000000 12.78860180 10.00000000 2 #  93: H
+   8.81000000 22.17631718 10.00000000 2 #  94: H
+   9.70000000 11.24707658 10.00000000 2 #  95: H
+   9.70000000 23.71784240 10.00000000 2 #  96: H
+  10.97000000  9.04737206 10.00000000 2 #  97: H
+  10.97000000 25.91754692 10.00000000 2 #  98: H
+  13.51000000  9.04737206 10.00000000 2 #  99: H
+  13.51000000 25.91754692 10.00000000 2 # 100: H
+  14.78000000 11.24707658 10.00000000 2 # 101: H
+  14.78000000 23.71784240 10.00000000 2 # 102: H
+  15.67000000 12.78860180 10.00000000 2 # 103: H
+  15.67000000 22.17631718 10.00000000 2 # 104: H
+%endblock AtomicCoordinatesAndAtomicSpecies

@@ -1,0 +1,28 @@
+set terminal pngcairo enhanced size 1000,600 font "Arial,12"
+set output "fatbands.png"
+
+set ylabel "Energía relativa a E_F (eV)"
+set title "Fat Bands aGNRP-13"
+set grid
+
+# Definir los puntos de alta simetría en la trayectoria k
+set xtics ("X"  0.000000, "Gamma"  0.104801, "X"  0.209601)
+set ytics 1
+
+# Definir el nivel de Fermi (ajústalo si es necesario)
+E_F = -3.886676  # Cambia este valor según el resultado de SIESTA
+
+# Dibujar línea en E=0 para indicar el nivel de Fermi
+set arrow from graph 0, first 0 to graph 1, first 0 nohead lw 1 lt 2 lc rgb "#7f7f7f" dt 2
+
+# Ajustar el rango de energía para que el origen esté en el nivel de Fermi
+set yrange [-1:4]  # Ajusta según tu sistema
+
+# Mover la leyenda fuera de la gráfica, en la parte superior
+set key outside right center vertical box
+
+# Representar las Fat Bands de todos los orbitales con diferentes colores
+plot "C_s.dat" u 1:($2 - E_F):3 w p pt 7 ps variable lc rgb "#d62728" t "s", \
+     "C_px.dat" u 1:($2 - E_F):3 w p pt 7 ps variable lc rgb "#ff7f0e" t "px", \
+     "C_py.dat" u 1:($2 - E_F):3 w p pt 7 ps variable lc rgb "#2ca02c" t "py", \
+     "C_pz.dat" u 1:($2 - E_F):3 w p pt 7 ps variable lc rgb "#1f77b4" t "pz"
